@@ -46,6 +46,9 @@ const Register = () => {
         if (password != confirm) {
             Seterr("password did not match match")
         }
+        else if (password.length < 6) {
+            alert("password must be 6 charecter")
+        }
         else {
             Seterr("")
         }

@@ -14,6 +14,10 @@ const Contex = ({ children }) => {
     let popUp = (provider) => {
 
         
+
+
+
+
     }
 
 
