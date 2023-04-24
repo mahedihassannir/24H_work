@@ -2,9 +2,14 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { contex } from './Contex/Contex';
 
+import { FaGoogle } from "react-icons/fa";
+import { signInWithPopup } from 'firebase/auth';
+
+
+
 const Login = () => {
 
-    let { handleLoigin } = useContext(contex)
+    let { handleLoigin, popUp } = useContext(contex)
 
     let loginPage = (e) => {
         e.preventDefault()
@@ -27,9 +32,14 @@ const Login = () => {
     }
 
 
+    let popUp1 = () => {
+        
+
+    }
 
     return (
         <div className="hero min-h-screen bg-base-200">
+
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left">
                     <h1 className="text-5xl font-bold">Login now!</h1>
@@ -55,6 +65,10 @@ const Login = () => {
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Login</button>
                         </div>
+                        <div className=' text-center w-1/2 mx-auto flex justify-center py-5'>
+                            <FaGoogle onClick={popUp1} className='cursor-pointer'></FaGoogle>
+                        </div>
+
                         <div>
                             <Link to="/Register">new to digital work</Link>
                         </div>

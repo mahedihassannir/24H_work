@@ -1,12 +1,28 @@
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Lottie from "lottie-react"
 
 import aname from '../../public/aname.json'
+import Single from './single';
 
 
 const Home = () => {
+
+    let [data1, setData2] = useState([])
+
+
+    useEffect(() => {
+        fetch('http://localhost:7000/catagorism')
+            .then(res => res.json())
+            .then(data => setData2(data))
+
+            .catch(err => console.error(err))
+    }, [])
+
+
+
+
     return (
         <div>
             {/* here is banner section */}
@@ -31,12 +47,29 @@ const Home = () => {
                     </div>
                 </div>
 
+                <div className=' w-11/12 mx-auto grid grid-cols-3 gap-3'>
+
+
+                    {data1 &&
+
+
+                        data1.map(res => <Single
+                            data={res}
+                            key={res.age}
+
+                        >
+
+                        </Single>)
+                    }
+
+                </div>
+
 
             </section>
 
 
 
-        </div>
+        </div >
     );
 };
 
