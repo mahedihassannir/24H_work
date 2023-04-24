@@ -14,6 +14,7 @@ const Home = () => {
 
     useEffect(() => {
         fetch('http://localhost:7000/catagorism')
+        // fetch('https://dulcet-gumdrop-c7ddd1.netlify.app/')
             .then(res => res.json())
             .then(data => setData2(data))
 
@@ -53,9 +54,9 @@ const Home = () => {
                     {data1 &&
 
 
-                        data1.map(res => <Single
+                        data1.slice(0,9).map(res => <Single
                             data={res}
-                            key={res.age}
+                            key={res.id}
 
                         >
 

@@ -71,7 +71,7 @@ const Login = () => {
                         </div>
 
                         <div>
-                            <Link to="/Register">new to digital work</Link>
+                            <Link to="/Register" className='link'>new to digital work</Link>
                         </div>
                     </form>
                 </div>

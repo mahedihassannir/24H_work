@@ -3,6 +3,7 @@ import React, { useContext, useState } from 'react';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { contex } from './Contex/Contex';
 import { sendEmailVerification } from 'firebase/auth';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
     let { Register } = useContext(contex)
@@ -107,6 +108,9 @@ const Register = () => {
 
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Register</button>
+                            </div>
+                            <div>
+                                <Link to="/Login" className='link'>Have an account</Link>
                             </div>
                             <div>
                                 <span className='text-red-600'>{err}</span>
